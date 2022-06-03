@@ -1,0 +1,382 @@
+/* ----- common styles ----- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: max-content;
+  min-height: 100vh;
+
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+h1 {
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+h2 {
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #696a6a;
+  padding: 30px 0;
+}
+
+span,
+input,
+option {
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+a {
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #696a6a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #808080;
+}
+
+label {
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding: 20px 0 0;
+  width: max-content;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  accent-color: #4f4f4f;
+}
+
+.grey-color {
+  color: #7d7c7c;
+}
+
+::placeholder {
+  color: #cccaca;
+}
+
+.gender span::before,
+.input label::before,
+.file label::before,
+.proposer label::before,
+#subscription-title:before {
+  content: "*";
+  color: #7f0614;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* ----- another styles ----- */
+
+header {
+  padding-top: 60px;
+}
+
+header #logo {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 17px;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1140px;
+  width: 100%;
+  padding: 50px;
+  margin: 50px auto 60px;
+  background-color: rgba(255, 255, 255, 0.855);
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+}
+
+@media (max-width: 1300px) {
+  main {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    padding: 20px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    max-width: 300px;
+  }
+}
+
+main .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+@media (max-width: 500px) {
+  main .title {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+/* ----- radio gender ----- */
+
+form .gender {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+form .gender label {
+  padding-right: 15px;
+}
+
+/* ----- inputs ----- */
+
+form .inputs-container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+form .inputs-container div {
+  flex: 50%;
+}
+
+@media (max-width: 768px) {
+  form .inputs-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  form .inputs-container div {
+    flex: 100%;
+  }
+}
+
+form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+form .input input {
+  outline: none;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+form .input input:hover {
+  border: 1px solid #8b8888;
+}
+
+/* ----- select ----- */
+
+form .input select {
+  appearance: none;
+  outline: none;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+form .input select:hover {
+  border: 1px solid #8b8888;
+}
+
+select:required:invalid {
+  color: #cccaca;
+  font-family: "georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+option:checked {
+  font-weight: bold;
+}
+
+/* ----- file ----- */
+
+form .file {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+form .file div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: max-content;
+}
+
+form .file div label div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  border: 1px solid #c3c3c3;
+  border-radius: 100px;
+  padding: 16px 37px;
+  margin: 15px 0 0;
+}
+
+form .file div label div:hover {
+  border: 1px solid #8b8888;
+  box-shadow: 1px 1px 8px 1px #9a9898;
+}
+
+form .file div img {
+  width: 18px;
+  height: 13px;
+}
+
+form #file-name {
+  padding-top: 20px;
+}
+
+/* ----- proposer ----- */
+
+form .proposer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form .proposer div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form .proposer input {
+  outline: none;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+form .proposer input:hover {
+  border: 1px solid #8b8888;
+}
+
+/* ----- radio subscription ----- */
+
+form .subscription {
+  display: flex;
+  flex-direction: column;
+}
+
+form .subscription span {
+  padding: 20px 0 10px;
+  width: max-content;
+}
+
+/* ----- button ----- */
+
+form .submit-button {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+input[type="submit"] {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #000;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #696a6a;
+  padding: 16px 37px;
+  width: max-content;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  border: 1px solid #808080;
+  box-shadow: 1px 1px 8px 1px #9a9898;
+}
