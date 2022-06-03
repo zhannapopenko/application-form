@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Application form</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1 id="logo">FORM</h1>
+</header>
+<main>
+    <div class="title">
+        <h1>Membership application form</h1>
+        <span class="grey-color">Step 2</span>
+    </div>
+    <div>
+        <h2>Address detail</h2>
+        <form action="" method="get">
+
+            <div class="inputs-container">
+                <div>
+                    <div class="input">
+                        <label for="address">Address</label>
+                        <input autocomplete="off" type="text" name="address" id="address" required>
+                    </div>
+                    <div class="input">
+                        <label for="city">City</label>
+                        <input autocomplete="off" type="text" name="city" id="city" required>
+                    </div>
+                    <div class="input">
+                        <label for="country">Country</label>
+                        <select name="country" id="country" required>
+                            <option value="" disabled selected hidden>Select an answer</option>
+                            <option value="ukraine">Ukraine</option>
+                            <option value="germany">Germany</option>
+                            <option value="canada">Canada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="input">
+                        <label for="suite">Suite or apt</label>
+                        <input autocomplete="off" type="text" name="suite" id="suite" required>
+                    </div>
+                    <div class="input">
+                        <label for="state">State</label>
+                        <input autocomplete="off" type="text" name="state" id="state" required>
+                    </div>
+                    <div class="input">
+                        <label for="zip-code">Zip code</label>
+                        <input autocomplete="off" type="text" name="zip-code" id="zip-code" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox">
+                <span>Check this box if you want to receive messages about offers and promotions from</span>
+                <div>
+                    <input type="checkbox" id="club1" name="club1">
+                    <label for="club1">Club 1</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="club2" name="club2">
+                    <label for="club2">Club 2</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="club3" name="club3">
+                    <label for="club3">Club 3</label>
+                </div>
+            </div>
+
+            <div>
+                <h2>Legal notice</h2>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.<br/> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</span>
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" value="continue">
+                <span class="grey-color">By checking on the button above, you agree to our
+                        <a href="#" target="_blank">terms of use</a> and
+                        <a href="#" target="_blank">privacy policy</a>
+                </span>
+            </div>
+
+        </form>
+    </div>
+</main>
+<script>
+    function uploadFile(target) {
+        document.getElementById("file-name").innerHTML = target.files[0].name;
+    }
+</script>
+</body>
+</html>
