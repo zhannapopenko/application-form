@@ -14,12 +14,12 @@
 </header>
 <main>
     <div class="title">
-        <h1>Membership application form</h1>
+        <h1>Application form</h1>
         <span class="grey-color">Step 2</span>
     </div>
     <div>
         <h2>Address detail</h2>
-        <form action="" method="get">
+        <form action="form3.html" method="get">
 
             <div class="inputs-container">
                 <div>
@@ -45,7 +45,7 @@
                 <div>
                     <div class="input">
                         <label for="suite">Suite or apt</label>
-                        <input autocomplete="off" type="text" name="suite" id="suite" required>
+                        <input autocomplete="off" type="number" name="suite" id="suite" required>
                     </div>
                     <div class="input">
                         <label for="state">State</label>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="input">
                         <label for="zip-code">Zip code</label>
-                        <input autocomplete="off" type="text" name="zip-code" id="zip-code" required>
+                        <input autocomplete="off" type="number" name="zip-code" id="zip-code" required>
                     </div>
                 </div>
             </div>
@@ -61,17 +61,17 @@
             <div class="checkbox">
                 <span>Check this box if you want to receive messages about offers and promotions from</span>
                 <div>
-                    <input type="checkbox" id="club1" name="club1">
+                    <input type="checkbox" id="club1" name="club" required>
                     <label for="club1">Club 1</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="club2" name="club2">
+                    <input type="checkbox" id="club2" name="club" required>
                     <label for="club2">Club 2</label>
                 </div>
 
                 <div>
-                    <input type="checkbox" id="club3" name="club3">
+                    <input type="checkbox" id="club3" name="club" required>
                     <label for="club3">Club 3</label>
                 </div>
             </div>
@@ -93,9 +93,6 @@
     </div>
 </main>
 <script>
-    function uploadFile(target) {
-        document.getElementById("file-name").innerHTML = target.files[0].name;
-    }
 </script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 /* ----- common styles ----- */
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -12,13 +15,37 @@ body {
   min-height: 100vh;
 
   background-image: url("../images/background.jpg");
-  background-size: cover;
+  background-size: 110% 100%;
   background-repeat: no-repeat;
 
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+}
+
+@media (max-width: 1400px) {
+  body {
+    background-size: 130% 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  body {
+    background-size: 110% 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    background-size: 200% 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    background-size: 150% 100%;
+  }
 }
 
 h1 {
@@ -39,6 +66,10 @@ h2 {
   color: #696a6a;
   padding: 30px 0;
   margin: 0;
+}
+
+#address-detail {
+  padding-bottom: 10px;
 }
 
 span,
@@ -63,7 +94,7 @@ a {
 }
 
 a:hover {
-    font-weight: 600;
+  font-weight: 600;
   color: #3a3939;
 }
 
@@ -79,8 +110,15 @@ label {
   cursor: pointer;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   accent-color: #4f4f4f;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .grey-color {
@@ -95,8 +133,7 @@ input[type="radio"], input[type="checkbox"] {
 .input label::before,
 .file label::before,
 .proposer label::before,
-#subscription-title:before,
-.checkbox span::before {
+#subscription-title:before {
   content: "*";
   color: #7f0614;
   position: relative;
@@ -178,6 +215,18 @@ main {
   }
 }
 
+@media (max-width: 370px) {
+  main {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 300px) {
+  main {
+    max-width: 230px;
+  }
+}
+
 main .title {
   display: flex;
   flex-direction: row;
@@ -221,9 +270,9 @@ form .inputs-container div {
 }
 
 @media (max-width: 1200px) {
-    form .inputs-container {
-        gap: 30px;
-    }
+  form .inputs-container {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -286,14 +335,20 @@ option:checked {
 
 form .file {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   gap: 15px;
+}
+
+@media (max-width: 576px) {
+  form .file div {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 form .file div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 15px;
   width: max-content;
 }
@@ -322,7 +377,19 @@ form .file div img {
 }
 
 form #file-name {
-  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+@media (max-width: 576px) {
+  form #file-name {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-top: 0;
+  }
 }
 
 /* ----- proposer ----- */
@@ -385,6 +452,18 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+@media (max-width: 370px) {
+  input[type="submit"] {
+    padding: 16px 25px;
+  }
+}
+
+@media (max-width: 300px) {
+  input[type="submit"] {
+    padding: 16px;
+  }
+}
+
 input[type="submit"]:hover {
   border: 1px solid #808080;
   box-shadow: 1px 1px 8px 1px #9a9898;
@@ -393,12 +472,12 @@ input[type="submit"]:hover {
 /* ----- checkbox ----- */
 
 form .checkbox {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
 }
 
 form .checkbox span {
-    max-width: 470px;
+  max-width: 470px;
 }
