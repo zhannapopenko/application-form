@@ -6,12 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Application form</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font.css">
+    <link rel="stylesheet" href="../styles/form.css">
+
 </head>
-<body>
-<header>
-    <h1 id="logo">FORM</h1>
-</header>
+<body id="particles-js">
 <main>
     <div class="title">
         <h1>Application form</h1>
@@ -24,7 +23,7 @@
             <div class="gender">
                 <span>Gender</span>
                 <div>
-                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <input type="radio" id="male" name="gender" value="Male">
                     <label for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="Female">
                     <label for="female">Female</label>
@@ -37,16 +36,15 @@
                 <div>
                     <div class="input">
                         <label for="name">First name</label>
-                        <input autocomplete="off" type="text" name="name" id="name" required>
+                        <input autocomplete="off" type="text" name="name" id="name">
                     </div>
                     <div class="input">
                         <label for="email">Email address</label>
-                        <input placeholder="email@domain.com" autocomplete="off" type="email" name="email" id="email"
-                               required>
+                        <input placeholder="email@domain.com" autocomplete="off" type="text" name="email" id="email">
                     </div>
                     <div class="input">
                         <label for="nationality">Nationality</label>
-                        <select name="nationality" id="nationality" required>
+                        <select name="nationality" id="nationality">
                             <option value="" disabled selected hidden>Select an answer</option>
                             <option value="ukraine">Ukrainian</option>
                             <option value="germany">German</option>
@@ -57,16 +55,15 @@
                 <div>
                     <div class="input">
                         <label for="surname">Surname</label>
-                        <input autocomplete="off" type="text" name="surname" id="surname" required>
+                        <input autocomplete="off" type="text" name="surname" id="surname">
                     </div>
                     <div class="input">
                         <label for="date">Date of birth</label>
-                        <input autocomplete="off" type="date" name="date" id="date" required>
+                        <input autocomplete="off" type="date" name="date" id="date">
                     </div>
                     <div class="input">
                         <label for="tel">Mobile number</label>
-                        <input autocomplete="off" type="tel" name="tel" id="tel" placeholder="123-45-678"
-                               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                        <input autocomplete="off" type="tel" name="tel" id="tel" placeholder="12345678">
                     </div>
                 </div>
             </div>
@@ -75,7 +72,7 @@
                 <div>
                     <label>
                         Proof of ID
-                        <input type="file" name="file" multiple style="display: none" onchange='uploadFile(this)'>
+                        <input type="file" name="file" style="display: none" onchange='uploadFile(this)'>
                         <div>
                             <img src="../images/upload.svg" alt="upload file"/>
                             <span>Click to upload</span>
@@ -89,7 +86,7 @@
             <div class="proposer">
                 <div>
                     <label for="proposer">Proposer</label>
-                    <input autocomplete="off" type="text" name="name" id="proposer" required>
+                    <input autocomplete="off" type="text" name="name" id="proposer">
                 </div>
                 <span class="grey-color">If you have been recommended to join someone else please provide their name</span>
             </div>
@@ -98,7 +95,7 @@
                 <span id="subscription-title">Type of subscription</span>
 
                 <div>
-                    <input type="radio" id="solo" name="subscription" value="Solo" required>
+                    <input type="radio" id="solo" name="subscription" value="Solo">
                     <label for="solo">SOLO</label>
                 </div>
                 <span class="grey-color">(S4,500/year S300 administration fee)</span>
@@ -121,6 +118,8 @@
         </form>
     </div>
 </main>
+<script type="text/javascript" src="../js/particles.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
 <script>
     function uploadFile(target) {
         document.getElementById("file-name").innerHTML = target.files[0].name;

@@ -6,12 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Application form</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font.css">
+    <link rel="stylesheet" href="../styles/form.css">
 </head>
-<body>
-<header>
-    <h1 id="logo">FORM</h1>
-</header>
+<body id="particles-js">
 <main>
     <div class="title">
         <h1>Application form</h1>
@@ -19,21 +17,21 @@
     </div>
     <div>
         <h2>Address detail</h2>
-        <form action="form3.html" method="get">
+        <form action="submission.html" method="get">
 
             <div class="inputs-container">
                 <div>
                     <div class="input">
                         <label for="address">Address</label>
-                        <input autocomplete="off" type="text" name="address" id="address" required>
+                        <input autocomplete="off" type="text" name="address" id="address">
                     </div>
                     <div class="input">
                         <label for="city">City</label>
-                        <input autocomplete="off" type="text" name="city" id="city" required>
+                        <input autocomplete="off" type="text" name="city" id="city">
                     </div>
                     <div class="input">
                         <label for="country">Country</label>
-                        <select name="country" id="country" required>
+                        <select name="country" id="country">
                             <option value="" disabled selected hidden>Select an answer</option>
                             <option value="ukraine">Ukraine</option>
                             <option value="germany">Germany</option>
@@ -45,15 +43,15 @@
                 <div>
                     <div class="input">
                         <label for="suite">Suite or apt</label>
-                        <input autocomplete="off" type="number" name="suite" id="suite" required>
+                        <input autocomplete="off" type="text" name="suite" id="suite">
                     </div>
                     <div class="input">
                         <label for="state">State</label>
-                        <input autocomplete="off" type="text" name="state" id="state" required>
+                        <input autocomplete="off" type="text" name="state" id="state">
                     </div>
                     <div class="input">
                         <label for="zip-code">Zip code</label>
-                        <input autocomplete="off" type="number" name="zip-code" id="zip-code" required>
+                        <input autocomplete="off" type="number" name="zip-code" id="zip-code">
                     </div>
                 </div>
             </div>
@@ -82,7 +80,7 @@
             </div>
 
             <div class="submit-button">
-                <input type="submit" value="continue">
+                <input type="submit" value="Submit your responses">
                 <span class="grey-color">By checking on the button above, you agree to our
                         <a href="#" target="_blank">terms of use</a> and
                         <a href="#" target="_blank">privacy policy</a>
@@ -92,7 +90,7 @@
         </form>
     </div>
 </main>
-<script>
-</script>
+<script type="text/javascript" src="../js/particles.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>
