@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Application form | Personal detail</title>
+    <link rel="stylesheet" href="../styles/font.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/dropdown.css" />
+    <link rel="stylesheet" href="../styles/calendar.css" />
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css" />
+  </head>
+  <body id="particles-js">
+    <main>
+      <div class="title">
+        <h1>Application form</h1>
+        <span class="grey-color">Step 1</span>
+      </div>
+      <div>
+        <h2>Personal detail</h2>
+        <form
+          action="address-detail.html"
+          method="get"
+          onsubmit="return validatePersonalDetails()">
+
+          <div class="gender">
+            <span>Gender</span>
+            <div class="items-container">
+              <div class="gender-item">
+                <input type="radio" id="male" name="gender" value="Male" />
+                <label for="male">Male</label>
+              </div>
+              <div class="gender-item">
+                <input type="radio" id="female" name="gender" value="Female" />
+                <label for="female">Female</label>
+              </div>
+              <div class="gender-item">
+                <input type="radio" id="no-answer" name="gender" value="Prefer not to answer" />
+                <label for="no-answer">Prefer not to answer</label>
+              </div>
+            </div>
+            <p class="text-gender-error">Please select an option.</p>
+          </div>
+
+          <div class="inputs-container">
+
+            <div class="input validation">
+              <label for="name">First name</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="name"
+                id="name"
+              />
+              <span class="text-error">Please write your name.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="surname">Surname</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="surname"
+                id="surname"
+              />
+              <span class="text-error">Please write your surname.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="tel">Mobile number</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="tel"
+                id="tel"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              />
+              <span class="text-error">Please write your mobile number.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="email">Email address</label>
+              <input
+                class="email input-value"
+                placeholder="email@domain.com"
+                autocomplete="off"
+                type="text"
+                name="email"
+                id="email"
+              />
+              <span class="text-error">Please write your e-mail.</span>
+              <span class="text-format-error">Please write in e-mail format.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="datepicker">Date of birth</label>
+              <input
+                class="input-value calendar"
+                type="text"
+                autocomplete="off"
+                id="datepicker"
+                name="date"
+              />
+              <span class="text-error">Please select your date of birth.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="nationality">Nationality</label>
+              <div class="dropdown" id="nationality">
+                <button class="dropdown-button">
+                  <span>Select an answer</span>
+                </button>
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item" data-value="ukrainian">
+                    Ukrainian
+                  </li>
+                  <li class="dropdown-list-item" data-value="canadian">
+                    Canadian
+                  </li>
+                  <li class="dropdown-list-item" data-value="polish">
+                    Polish
+                  </li>
+                </ul>
+                <span class="text-error">Please select an option.</span>
+                <!--input value is required to obtain the selection data and submit it-->
+                <input
+                  type="text"
+                  name="select-category"
+                  value=""
+                  class="dropdown-input-hidden"
+                />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="file">
+            <div>
+              <div class="file-btn-block">
+                <span id="file-label">Proof of ID</span>
+                <label>
+                  <input
+                    class="input-file"
+                    type="file"
+                    name="file"
+                    onchange="uploadFile(this)"
+                  />
+                  <div>
+                    <img src="../svg/upload.svg" alt="upload file" />
+                    <span>Click to upload</span>
+                  </div>
+                </label>
+              </div>
+              <span id="file-name"></span>
+            </div>
+            <span class="grey-color">Maximum upload size 10MB.</span>
+            <span class="text-error-length">Please choose a file.</span>
+            <span class="text-error-size">File size exceeds 10MB.</span>
+          </div>
+
+          <div class="proposer">
+            <div>
+              <label for="proposer">Proposer</label>
+              <input
+                autocomplete="off"
+                type="text"
+                name="proposer"
+                id="proposer"
+              />
+            </div>
+            <span class="grey-color">If you have been recommended to join someone else please provide
+              their name</span>
+          </div>
+
+          <div class="subscription">
+            <span id="subscription-title">Type of subscription</span>
+
+            <div>
+              <input type="radio" id="solo" name="subscription" value="Solo" />
+              <label for="solo">SOLO</label>
+            </div>
+            <span class="grey-color">(S4,500/year S300 administration fee)</span>
+
+            <div>
+              <input type="radio" id="duo" name="subscription" value="Duo" />
+              <label for="duo">DUO</label>
+            </div>
+            <span class="grey-color">(S8,000/year S300 administration fee for two)</span>
+
+          </div>
+          <span class="text-subscription-error">Please select an option.</span>
+
+          <div class="submit-button">
+            <input type="submit" value="continue" name="submit" />
+            <span class="grey-color">
+              By checking on the button above, you agree to our
+              <a href="#" target="_blank">terms of use</a> and
+              <a href="#" target="_blank">privacy policy</a>
+            </span>
+          </div>
+
+        </form>
+      </div>
+    </main>
+    <script type="text/javascript" src="../js/particles-js/particles.min.js"></script>
+    <script type="text/javascript" src="../js/particles-js/app.js"></script>
+    <script type="text/javascript" src="../js/dropdown/dropdown.js"></script>
+    <script type="text/javascript" src="../js/validation/validation.js"></script>
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+    $("#datepicker").datepicker();
+  });
+    </script>
+  </body>
+</html>

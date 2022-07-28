@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Application form | Address detail</title>
+    <link rel="stylesheet" href="../styles/font.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/dropdown.css" />
+  </head>
+  <body id="particles-js">
+    <main>
+      <div class="title">
+        <h1>Application form</h1>
+        <span class="grey-color">Step 2</span>
+      </div>
+      <div>
+        <h2>Address detail</h2>
+        <form
+          action="submission.html"
+          method="get"
+          onsubmit="return validateAddressDetails()"
+        >
+          <div class="inputs-container">
+
+            <div class="form-group">
+              <label for="country">Country</label>
+              <div class="dropdown" id="country">
+                <button class="dropdown-button">
+                  <span>Select an answer</span>
+                </button>
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item" data-value="ukraine">
+                    Ukraine
+                  </li>
+                  <li class="dropdown-list-item" data-value="canada">
+                    Canada
+                  </li>
+                  <li class="dropdown-list-item" data-value="poland">
+                    Poland
+                  </li>
+                </ul>
+                <span class="text-error">Please select an option.</span>
+                <!--input value is required to obtain the selection data and submit it-->
+                <input
+                  type="text"
+                  name="select-category-2"
+                  value=""
+                  class="dropdown-input-hidden"
+                />
+              </div>
+            </div>
+
+            <div class="input validation">
+              <label for="state">State</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="state"
+                id="state"
+              />
+              <span class="text-error">Please write your state.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="city">City</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="city"
+                id="city"
+              />
+              <span class="text-error">Please write your city.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="zip-code">Zip code</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="zip-code"
+                id="zip-code"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              />
+              <span class="text-error">Please write your zip code.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="address">Address</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="address"
+                id="address"
+              />
+              <span class="text-error">Please write your address.</span>
+            </div>
+
+            <div class="input validation">
+              <label for="suite">Suite or apt</label>
+              <input
+                class="input-value"
+                autocomplete="off"
+                type="text"
+                name="suite"
+                id="suite"
+              />
+              <span class="text-error">Please write suite or apt.</span>
+            </div>
+          </div>
+
+          <div class="checkbox">
+            <span>Check this box if you want to receive messages about offers and promotions from</span>
+            <div>
+              <input type="checkbox" id="club1" name="club" />
+              <label for="club1">Club 1</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="club2" name="club" />
+              <label for="club2">Club 2</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="club3" name="club" />
+              <label for="club3">Club 3</label>
+            </div>
+          </div>
+
+          <div>
+            <h2>Legal notice</h2>
+            <span>Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries.</span>
+          </div>
+
+          <div class="submit-button">
+            <input type="submit" value="Submit your responses" />
+            <span class="grey-color"
+              >By checking on the button above, you agree to our
+              <a href="#" target="_blank">terms of use</a> and
+              <a href="#" target="_blank">privacy policy</a>
+            </span>
+          </div>
+        
+        </form>
+      </div>
+    </main>
+    <script type="text/javascript" src="../js/particles-js/particles.min.js"></script>
+    <script type="text/javascript" src="../js/particles-js/app.js"></script>
+    <script type="text/javascript" src="../js/dropdown/dropdown.js"></script>
+    <script type="text/javascript" src="../js/validation/validation.js"></script>
+  </body>
+</html>
