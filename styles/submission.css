@@ -39,7 +39,7 @@ body {
 
 .submission h1 {
   z-index: 2;
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 42px;
@@ -57,7 +57,7 @@ body {
 
 .submission div {
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.855);
+  background-color: #fff;
   border-radius: 10px;
   padding: 50px;
 
@@ -82,12 +82,12 @@ body {
 }
 
 .submission img {
-  width: 70px;
-  height: 61px;
+  width: 100px;
+  height: 80px;
 }
 
 .submission h2 {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -111,7 +111,7 @@ body {
 }
 
 .submission span {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

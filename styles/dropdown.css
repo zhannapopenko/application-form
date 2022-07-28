@@ -1,0 +1,124 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.form-group input {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown span {
+  padding-top: 10px;
+}
+
+.dropdown-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  background: #fff;
+  border: 1px solid #c3c3c3;
+  min-height: 50px;
+  padding: 15px 35px 15px 15px;
+  outline: none;
+  border-radius: 5px;
+
+  font-family: "lucien", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.dropdown-button::after {
+  content: "";
+  background-image: url("../svg/arrow.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  transform: translate(-50%);
+  pointer-events: none;
+}
+
+.dropdown-button:hover {
+  outline: none;
+  border: 1px solid #8b8888;
+}
+
+.dropdown-button:focus {
+  outline: none;
+  border: 1px solid #8b8888;
+}
+
+.dropdown-button-active {
+  outline: none;
+  border: 1px solid #8b8888;
+}
+
+.dropdown-button span {
+  color: #eaeaea;
+  pointer-events: none;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.dropdown-list-visible {
+  display: block;
+}
+
+.dropdown-list-item {
+  font-family: "lucien", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #c3c3c3;
+  border-bottom: 0;
+  padding: 13px 20px;
+  cursor: pointer;
+}
+
+.dropdown-list-item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dropdown-list-item:last-child {
+  border-bottom: 1px solid #c3c3c3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.dropdown-list-item:hover {
+  background: rgba(185, 188, 190, 0.26);
+}
+
+.dropdown-input-hidden {
+  display: none;
+}

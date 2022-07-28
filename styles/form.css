@@ -21,6 +21,7 @@ body {
 
 .particles-js-canvas-el {
   position: fixed;
+  z-index: -1;
 }
 
 body {
@@ -35,7 +36,7 @@ body {
 }
 
 h1 {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -45,24 +46,24 @@ h1 {
 }
 
 h2 {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #838383;
-  padding: 30px 0;
+  padding: 25px 0;
   margin: 0;
 }
 
-#address-detail {
+/* #address-detail {
   padding-bottom: 10px;
-}
+} */
 
 span,
 input,
-option {
-  font-family: 'Lucien', sans-serif;
+p {
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -70,8 +71,12 @@ option {
   color: #000000;
 }
 
+p {
+  margin: 0;
+}
+
 a {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -86,13 +91,12 @@ a:hover {
 }
 
 label {
-  font-family: 'Lucien', sans-serif;
+  font-family: "Lucien", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   color: #000000;
-  padding: 20px 0 0;
   width: max-content;
   cursor: pointer;
 }
@@ -100,10 +104,11 @@ label {
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: #4f4f4f;
+  margin: 0;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -119,89 +124,50 @@ input::-webkit-inner-spin-button {
 .gender span::before,
 .input label::before,
 .file label::before,
-.proposer label::before,
-#subscription-title:before {
+#subscription-title:before,
+.form-group label::before,
+#file-label::before {
   content: "*";
-  color: #7f0614;
+  color: #a10012;
   position: relative;
   top: 0;
   left: 0;
 }
 
-/* ----- another styles ----- */
-
-header {
-  z-index: 2;
-  padding-top: 60px;
-  height: 100%;
-}s
-
-header h1 #logo {
-  height: fit-content;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 17px;
-  color: #fff;
+.text-error,
+.text-error-checkbox,
+.text-error-length,
+.text-error-size,
+.text-gender-error,
+.text-subscription-error,
+.text-partner-gender-error,
+.text-format-error,
+.number-format-error {
+  display: none;
+  color: #a10012;
 }
 
+/* .border-error {
+  border: 1px solid #a10012;
+} */
+
+/* ----- another styles ----- */
+
 main {
-  z-index: 2;
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  width: 100%;
+  width: calc(100% - 100px);
   padding: 50px;
   margin: 50px auto 60px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
-@media (max-width: 992px) {
-  main {
-    max-width: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 650px) {
-  main {
-    max-width: 450px;
-  }
-}
-
 @media (max-width: 576px) {
   main {
-    padding: 20px;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 500px) {
-  main {
-    max-width: 350px;
-  }
-}
-
-@media (max-width: 400px) {
-  main {
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 370px) {
-  main {
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 300px) {
-  main {
-    max-width: 230px;
+    width: calc(100% - 50px);
+    padding: 25px;
   }
 }
 
@@ -214,11 +180,12 @@ main .title {
   border-bottom: 1px solid #eaeaea;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   main .title {
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    gap: 10px;
   }
 }
 
@@ -227,40 +194,60 @@ main .title {
 form .gender {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   padding-bottom: 10px;
 }
 
+form .items-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (max-width: 576px) {
+  form .items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+form .gender-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}
+
 form .gender label {
-  padding-right: 15px;
+  text-align: center;
+  margin-top: 0;
+}
+
+input[name="gender"] {
+  margin-top: 0;
 }
 
 /* ----- inputs ----- */
 
 form .inputs-container {
-  display: flex;
-  flex-direction: row;
-  gap: 60px;
-}
-
-form .inputs-container div {
-  flex: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 45px;
+  grid-auto-rows: minmax(auto, 100%);
 }
 
 @media (max-width: 1200px) {
   form .inputs-container {
-    gap: 30px;
+    column-gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
   form .inputs-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  form .inputs-container div {
-    flex: 100%;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
   }
 }
 
@@ -269,6 +256,7 @@ form .input {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  padding-top: 20px;
 }
 
 form .input input {
@@ -282,45 +270,24 @@ form .input input:hover {
   border: 1px solid #8b8888;
 }
 
-/* ----- select ----- */
-
-select {
-  font-family: 'Lucien', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-
-  appearance: none;
-  outline: none;
-  border: 1px solid #c3c3c3;
-  border-radius: 5px;
-  padding: 15px 10px;
-}
-
-select:hover {
-  border: 1px solid #8b8888;
-}
-
-select:required:invalid {
-  color: #cccaca;
-  font-family: 'Lucien', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-option:checked {
-  font-weight: bold;
-}
-
 /* ----- file ----- */
 
 form .file {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding-top: 20px;
+}
+
+form .file .input-file {
+  display: none;
+}
+
+form .file div {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: max-content;
 }
 
 @media (max-width: 576px) {
@@ -330,11 +297,10 @@ form .file {
   }
 }
 
-form .file div {
+form .file .file-btn-block {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  width: max-content;
+  flex-direction: column;
+  gap: 8px;
 }
 
 form .file div label div {
@@ -347,11 +313,18 @@ form .file div label div {
   border: 1px solid #696a6a;
   border-radius: 100px;
   padding: 16px 37px;
-  margin: 15px 0 0;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  form .file div label div {
+    padding: 15px 20px;
+    width: 100%;
+  }
 }
 
 form .file div label div:hover {
-  border: 1px solid #8b8888;
+  border: 1px solid #696a6a;
   box-shadow: 1px 1px 8px 1px #9a9898;
 }
 
@@ -360,11 +333,31 @@ form .file div img {
   height: 13px;
 }
 
+.file label::before {
+  content: "";
+}
+
 form #file-name {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  max-width: 280px;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  form #file-name {
+    max-width: 250px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+}
+
+@media (max-width: 650px) {
+  form #file-name {
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -373,6 +366,19 @@ form #file-name {
     justify-content: start;
     align-items: start;
     padding-top: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 426px) {
+  form #file-name {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 320px) {
+  form #file-name {
+    max-width: 200px;
   }
 }
 
@@ -382,6 +388,7 @@ form .proposer {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding-top: 20px;
 }
 
 form .proposer div {
@@ -406,17 +413,29 @@ form .proposer input:hover {
 form .subscription {
   display: flex;
   flex-direction: column;
+  padding-top: 15px;
+}
+
+form .subscription div {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 5px;
 }
 
 form .subscription span {
-  padding: 20px 0 10px;
+  padding: 10px 0 15px;
   width: max-content;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   form .subscription span {
-    width: min-content;
+    width: 100%;
   }
+}
+
+input[name="subscription"] {
+  margin-bottom: 3px;
 }
 
 /* ----- button ----- */
@@ -425,10 +444,11 @@ form .submit-button {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 input[type="submit"] {
+  font-family: "Lucien", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -442,23 +462,23 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-@media (max-width: 370px) {
-  input[type="submit"] {
-    padding: 16px 25px;
-  }
-}
-
-@media (max-width: 300px) {
-  input[type="submit"] {
-    padding: 16px;
-  }
-}
-
 input[type="submit"]:hover {
   border: 1px solid #000;
   background-color: #000;
   color: #fff;
   box-shadow: 1px 1px 8px 1px #9a9898;
+}
+
+@media (max-width: 576px) {
+  input[type="submit"] {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 426px) {
+  input[type="submit"] {
+    width: 100%;
+  }
 }
 
 /* ----- checkbox ----- */
