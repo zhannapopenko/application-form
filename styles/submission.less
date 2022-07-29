@@ -1,0 +1,120 @@
+@import "main";
+
+body {
+  width: 100%;
+  height: max-content;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submission {
+  z-index: 1;
+
+  h1 {
+    z-index: 2;
+    font-family: "Lucien", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 38px;
+    text-align: center;
+    color: @light-color;
+    margin: 0 0 50px;
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+    }
+  }
+
+  div {
+    z-index: 2;
+    background-color: @light-color;
+    border-radius: 10px;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      padding: 50px;
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+      padding: 20px;
+    }
+
+    img {
+      width: 100px;
+      height: 80px;
+    }
+  }
+
+  h2 {
+    font-family: "Lucien", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    color: @main-color;
+    margin: 40px 0 26px;
+    max-width: 250px;
+
+    @media (max-width: 576px) {
+      margin: 26px 0 20px;
+    }
+
+    @media (max-width: 400px) {
+      max-width: 230px;
+    }
+  }
+
+  span {
+    font-family: "Lucien", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: @grey-border;
+    margin-bottom: 40px;
+
+    @media (max-width: 400px) {
+      max-width: 230px;
+    }
+  }
+
+  input {
+    text-transform: uppercase;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid @grey-border;
+    padding: 16px 37px;
+    width: max-content;
+    cursor: pointer;
+    .text();
+
+    @media (max-width: 370px) {
+      padding: 16px 25px;
+    }
+
+    @media (max-width: 300px) {
+      padding: 16px;
+    }
+  }
+
+  input:hover {
+    border: 1px solid @main-color;
+    background-color: @main-color;
+    color: @light-color;
+    box-shadow: 1px 1px 8px 1px @grey-border;
+  }
+}

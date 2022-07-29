@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#particles-js {
+  width: 100%;
+  height: max-content;
+  min-height: 100vh;
+
+  background-color: @main-color;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.particles-js-canvas-el {
+  position: fixed;
+  z-index: -1;
+}
+
+.header {
+  font-family: "Lucien", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+}
+
+.text {
+  font-family: "Lucien", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: @main-color;
+}
+
+.error {
+  display: none;
+  color: @error;
+}
+
+@main-color: #000;
+@light-color: #fff;
+@active-color: #3a3939;
+@extra-light-grey-color: #eaeaea;
+@light-grey-color: #a3a2a2;
+@grey-color: #838383;
+@light-grey-border: #c3c3c3;
+@grey-border: #696a6a;
+@hover: #8b8888;
+@error: #a10012;
