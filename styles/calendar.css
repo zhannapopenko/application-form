@@ -1,9 +1,5 @@
 /* configure jQuery style */
 
-.calendar {
-  z-index: 5;
-}
-
 .ui-datepicker {
   width: 300px;
   height: max-content;
