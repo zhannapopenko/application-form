@@ -1,8 +1,11 @@
 # Application form
 
+#### This project contains two pages of forms and one final page to report completion. 
+#### Form validation is also implemented in the project.
+
 ### [Demo](https://zhannapopenko.github.io/form/)
 
-### I have built this site using:
+### I've built this site using:
 - HTML
 - CSS/Less
 - JavaScript
