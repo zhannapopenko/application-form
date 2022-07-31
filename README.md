@@ -3,7 +3,7 @@
 #### This project contains two pages of forms and one final page to report completion. 
 #### Form validation is also implemented in the project.
 
-### [Demo](https://zhannapopenko.github.io/form/)
+### [Demo](https://zhannapopenko.github.io/application-form/)
 
 ### I've built this site using:
 - HTML
